@@ -34,18 +34,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .hero p{margin:20px 0 0;max-width:52ch;font-size:18px;color:var(--muted)}
 .hero p.lead{font-size:20px;font-weight:500;color:var(--ink)}
 .hero p + p{margin-top:12px}
-.facts{margin:24px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;max-width:620px;border-top:1px solid var(--line);padding-top:16px}
-@media (max-width:560px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.results{margin-top:28px;border-top:1px solid var(--line);padding-top:16px;max-width:640px;display:flex;flex-direction:column;gap:14px}
+.facts{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+@media (max-width:480px){.facts{grid-template-columns:minmax(0,1fr)}}
+.hero p.foot{margin:0;font-size:12px;max-width:none}
 .facts div{display:flex;flex-direction:column;gap:2px;min-width:0}
 .facts dt{font:700 28px/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums;order:1}
-.facts dd{margin:0;font-size:13px;line-height:1.35;order:2}
+.facts dd{margin:4px 0 0;font-size:14px;line-height:1.4;order:2}
 .hero p strong{color:var(--ink);font-weight:600}
 .skills{display:flex;flex-direction:column;gap:12px;min-width:0}
 .skills ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.skills li{display:flex;flex-direction:column;gap:2px;padding:12px 0;border-top:1px solid var(--line)}
+.skills li{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-top:1px solid var(--line)}
 .skills li:last-child{border-bottom:1px solid var(--line)}
 .skills b{font:600 18px/1.25 var(--display)}
-.skills span{font-size:14px}
+.skills span{font-size:14px;line-height:1.45}
 
 /* section head */
 section{display:flex;flex-direction:column;gap:24px;scroll-margin-top:24px}
@@ -55,21 +57,22 @@ section{display:flex;flex-direction:column;gap:24px;scroll-margin-top:24px}
 .sh p{margin:0;color:var(--muted);max-width:56ch}
 
 /* reels */
-.reels{display:grid;grid-template-columns:repeat(3,minmax(0,190px)) minmax(0,1fr);gap:16px;align-items:stretch}
-@media (max-width:820px){.reels{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}}
-.reel{aspect-ratio:9/16;max-width:100%;background:var(--accent-soft);color:var(--ink);border:1px solid var(--ink);border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;position:relative;overflow:hidden;transition:transform .2s}
+.sh p.kicker{font:600 clamp(20px,2.4vw,26px)/1.25 var(--display);max-width:none}
+.reels{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:center}
+@media (max-width:860px){.reels{grid-template-columns:minmax(0,1fr)}}
+.reel-row{display:grid;grid-template-columns:repeat(3,130px);gap:12px}
+@media (max-width:480px){.reel-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}}
+.reel{aspect-ratio:9/16;max-width:100%;background:var(--accent-soft);color:var(--ink);border:1px solid var(--ink);border-radius:12px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;transition:transform .2s}
 .reel:hover{transform:translateY(-4px)}
-.reel .n{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;position:relative}
-.reel .q{font:italic 500 clamp(14px,1.8vw,19px)/1.2 var(--display);position:relative}
-.reel .go{display:flex;align-items:center;gap:8px;font:600 13px/1.2 var(--body);position:relative}
-.play{width:30px;height:30px;border-radius:50%;background:var(--surface);border:1px solid var(--ink);display:grid;place-items:center;flex:none}
-.play::after{content:"";border-left:9px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
-@media (max-width:480px){.reel .go{font-size:0;gap:0}.reel .n{font-size:10px}}
-.reel-note{align-self:center;display:flex;flex-direction:column;gap:14px;min-width:0}
-@media (max-width:820px){.reel-note{grid-column:1/-1}}
-.reel-note h3{font:600 20px/1.3 var(--display);margin:0}
-.reel-note p{margin:0;max-width:44ch}
-.reel-note ul{margin:0;padding-left:18px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.reel .n{font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.reel .q{font:italic 500 13px/1.25 var(--display)}
+.reel .go{display:flex;align-items:center;gap:6px;font:600 12px/1.2 var(--body)}
+.play{width:26px;height:26px;border-radius:50%;background:var(--surface);border:1px solid var(--ink);display:grid;place-items:center;flex:none}
+.play::after{content:"";border-left:8px solid var(--ink);border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+.reel-note{display:flex;flex-direction:column;gap:12px;min-width:0;max-width:62ch}
+.reel-note p{margin:0}
+.reel-note h3{font:600 18px/1.3 var(--display);margin:8px 0 0}
+.reel-note ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
 
 /* landing */
 .landing{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
@@ -79,39 +82,48 @@ section{display:flex;flex-direction:column;gap:24px;scroll-margin-top:24px}
 .l-main .tag{font-size:18px;color:var(--muted);margin:0;max-width:48ch}
 .cta{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;background:transparent;color:var(--ink);border:1px solid var(--ink);padding:12px 18px;border-radius:4px;font-weight:600;text-decoration:none}
 .cta:hover{background:var(--accent-soft)}
-.l-main .tag{font-size:16px}
-.result{display:flex;flex-direction:column;gap:2px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.l-main p{margin:0;max-width:60ch}
+.explore{display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:12px}
+.explore span{font-size:14px;font-weight:600}
+.result{display:flex;flex-direction:column;gap:4px;margin-top:4px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .result .big{font:700 clamp(40px,5vw,56px)/1 var(--display);letter-spacing:-.03em}
 .result span:last-child{font-size:15px}
 .did{padding:32px;background:var(--accent-soft);display:flex;flex-direction:column;gap:12px;min-width:0}
 @media (max-width:820px){.did{padding:24px}}
 .did ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.did li{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-top:1px solid var(--line)}
+.did li{padding:12px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.45}
 .did li:first-child{border-top:0;padding-top:4px}
 .did b{font-weight:600;font-size:17px}
 .did span{font-size:15px;line-height:1.45}
 
 /* articles */
-.arts{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-.art a{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:8px 32px;padding:24px 0;border-bottom:1px solid var(--line);text-decoration:none;align-items:start}
-@media (max-width:700px){.art a{grid-template-columns:minmax(0,1fr)}}
-.art time{font:500 13px/1.9 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
-.art h3{font:400 clamp(22px,2.6vw,28px)/1.15 var(--display);margin:0;text-wrap:balance}
-.art a:hover h3{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-.art p{margin:8px 0 0;color:var(--muted);max-width:62ch}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.chip{font:500 12px var(--mono);padding:3px 8px;border:1px solid var(--line);border-radius:3px;color:var(--muted)}
-.arrow{font:400 26px/1 var(--display);color:var(--muted)}
-.art a:hover .arrow{color:var(--accent)}
+.seo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px 48px;align-items:start}
+@media (max-width:860px){.seo{grid-template-columns:minmax(0,1fr)}}
+.seo-text{display:flex;flex-direction:column;gap:12px;max-width:62ch}
+.seo-text p{margin:0}
+.seo-list{display:flex;flex-direction:column;gap:12px;min-width:0}
+.seo-list ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.seo-list li{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid var(--line)}
+.seo-list b{font-weight:600;font-size:18px;line-height:1.3}
+.seo-list li span{font-size:15px}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links .cta{padding:9px 14px;font-size:14px}
 
 /* automation */
 .auto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:32px;background:var(--surface);color:var(--ink);border:1px solid var(--ink);border-radius:6px;padding:32px}
 @media (max-width:820px){.auto{grid-template-columns:minmax(0,1fr);padding:24px}}
 .auto h3{font:400 clamp(30px,4vw,44px)/1.02 var(--display);margin:8px 0 0}
 .auto .label{color:inherit}
-.auto p{margin:14px 0 0;max-width:50ch}
-.auto .cta{margin-top:22px}
+.auto p{margin:0}
 .flow{display:flex;flex-direction:column;gap:14px;min-width:0}
+.auto-main{display:flex;flex-direction:column;gap:14px;min-width:0}
+.auto-main p{margin:0;max-width:58ch}
+.auto .result .big{font-size:clamp(30px,4vw,44px)}
+.auto p.aside{font-size:14px;font-style:italic}
+.how{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.how li{padding:12px 0;border-bottom:1px solid var(--line);line-height:1.45}
+.auto .explore{padding-top:4px}
+
 .steps{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px}
 .steps span{aspect-ratio:1;max-width:100%;border-radius:3px;display:grid;place-items:center;font:500 12px var(--mono);border:1px solid var(--ink);color:var(--ink)}
 .steps .s0{background:#FFFFFF}
@@ -131,13 +143,13 @@ footer{border-top:1px solid var(--ink);padding-top:28px;display:flex;flex-direct
 .contact{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 @media (max-width:760px){.contact{grid-template-columns:minmax(0,1fr);gap:18px}}
 .contact li{display:flex;flex-direction:column;gap:6px;min-width:0}
-.contact .k{font:600 13px var(--body);text-transform:uppercase;letter-spacing:.08em}
-.contact a{font:600 18px var(--body);text-decoration:none;overflow-wrap:anywhere}
+.contact .k{font:600 11px var(--body);text-transform:uppercase;letter-spacing:.08em}
+.contact a{font:500 15px var(--body);text-decoration:none;overflow-wrap:anywhere}
 .contact a:hover{text-decoration:underline;text-underline-offset:4px}
 footer h2{font:400 clamp(28px,4vw,40px)/1.05 var(--display);margin:6px 0 0}
 .mail{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.mail code{font:600 18px var(--body);user-select:all;overflow-wrap:anywhere}
-.mail button{font:600 14px var(--body);background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:4px;padding:8px 14px;cursor:pointer}
+.mail code{font:500 15px var(--body);user-select:all;overflow-wrap:anywhere}
+.mail button{font:600 12px var(--body);background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:4px;padding:5px 10px;cursor:pointer}
 .mail button:hover{background:var(--accent-soft)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -147,144 +159,162 @@ footer h2{font:400 clamp(28px,4vw,40px)/1.05 var(--display);margin:6px 0 0}
 <div class="wrap">
   <header class="hero">
     <div>
-      <div class="label">Portafolio · Contenido y marketing digital</div>
+      <div class="label">Copywriter | SEO Content Strategist | Content Marketing</div>
       <h1>Jairo <em>Obando</em></h1>
-      <p class="lead">Comunicador Social y Periodista. Hace casi 10 años creo contenido digital que conecta marcas con personas y se convierte en resultados de negocio.</p>
-      <p>Hoy lidero el equipo de <strong>Content Marketing de LinkTIC</strong>: redactores y estrategas que diseñan contenido 360° para audiencias B2B y B2C. Antes fui Copywriter y Redactor SEO en la misma compañía, donde mezclé creatividad y analítica para crecer el tráfico orgánico. Mi camino pasa por <strong>Publicar S.A.</strong> y <strong>Seguralia</strong>.</p>
-      <dl class="facts">
-        <div><dt>+15%</dt><dd>tráfico orgánico</dd></div>
-        <div><dt>+1.000</dt><dd>registros orgánicos en un evento</dd></div>
-        <div><dt>50</dt><dd>piezas de contenido al mes</dd></div>
-        <div><dt>−80%</dt><dd>consultas a soporte con manuales UX</dd></div>
-      </dl>
+      <p class="lead">Soy Comunicador Social y Periodista, con casi 10 años de experiencia en contenido digital, copywriting y marketing de contenidos. Combino estrategia, creatividad y análisis para transformar objetivos de negocio en mensajes relevantes para las personas.</p>
+      <p>Actualmente lidero el equipo de <strong>Content Marketing de LinkTIC</strong>, donde coordino redactores y estrategas para desarrollar contenidos dirigidos a audiencias B2B y B2C. Mi experiencia también incluye SEO, UX writing, campañas multicanal y automatización de procesos editoriales con inteligencia artificial.</p>
+      <div class="results">
+        <div class="label">Resultados destacados*</div>
+        <dl class="facts">
+          <div><dt>+40%</dt><dd>Incremento del engagement mediante planificación editorial basada en datos y rendimiento.</dd></div>
+          <div><dt>+65%</dt><dd>Crecimiento del tráfico orgánico a través de la creación y optimización de artículos SEO y landing pages.</dd></div>
+          <div><dt>−35%</dt><dd>Reducción de las consultas a soporte mediante manuales UX y contenido centrado en la experiencia del usuario.</dd></div>
+          <div><dt>+20%</dt><dd>Incremento de leads calificados mediante contenidos orientados al funnel de conversión.</dd></div>
+        </dl>
+        <p class="foot">* En las diferentes empresas en las que he trabajado.</p>
+      </div>
     </div>
     <aside class="skills" aria-labelledby="h-skills">
       <div class="label" id="h-skills">Especialidades</div>
       <ul>
-        <li><b>Estrategia de contenido 360°</b><span>Para audiencias B2B y B2C</span></li>
-        <li><b>SEO y copywriting</b><span>Artículos, landings y UX writing</span></li>
-        <li><b>Liderazgo de equipos creativos</b><span>Redactores y estrategas</span></li>
-        <li><b>IA aplicada al contenido</b><span>Automatización de campañas</span></li>
+        <li><b>Estrategia de contenido</b><span>Diseño estrategias editoriales que conectan los objetivos del negocio con las necesidades de las audiencias B2B y B2C.</span></li>
+        <li><b>Copywriting y SEO</b><span>Desarrollo artículos, landing pages y mensajes persuasivos que combinan intención de búsqueda, claridad y objetivos de conversión.</span></li>
+        <li><b>Liderazgo de equipos creativos</b><span>Coordino redactores y estrategas, alineando procesos, prioridades y narrativas para mantener la calidad y coherencia de los contenidos.</span></li>
+        <li><b>Inteligencia artificial aplicada al contenido</b><span>Diseño herramientas y flujos de trabajo que agilizan la producción editorial sin perder el criterio humano, la voz de marca ni la intención estratégica.</span></li>
       </ul>
     </aside>
   </header>
 
   <section id="guiones" aria-labelledby="h-guiones">
     <div class="sh">
-      <div><div class="label">01 · Video corto</div><h2 id="h-guiones">Guiones</h2></div>
-      <p>Guiones para reels de Instagram: gancho en los primeros segundos, una idea por pieza y cierre con llamado a la acción.</p>
+      <div><div class="label">01 · Guiones</div><h2 id="h-guiones">Guiones para video corto</h2></div>
+      <p class="kicker">Cada segundo cuenta. Cada palabra también.</p>
     </div>
     <div class="reels">
-      <a class="reel" href="https://www.instagram.com/reel/DdKT60VJizr/" target="_blank" rel="noopener">
-        <span class="n">Reel 01</span>
-        <span class="q">Guion para reel de Instagram</span>
-        <span class="go"><span class="play" aria-hidden="true"></span>Ver en Instagram</span>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/Dc_2U4Yj0H8/" target="_blank" rel="noopener">
-        <span class="n">Reel 02</span>
-        <span class="q">Guion para reel de Instagram</span>
-        <span class="go"><span class="play" aria-hidden="true"></span>Ver en Instagram</span>
-      </a>
-      <a class="reel" href="https://www.instagram.com/reel/DZ8MzQvSvAl/" target="_blank" rel="noopener">
-        <span class="n">Reel 03</span>
-        <span class="q">Guion para reel de Instagram</span>
-        <span class="go"><span class="play" aria-hidden="true"></span>Ver en Instagram</span>
-      </a>
       <div class="reel-note">
-        <h3>Qué hice</h3>
-        <p>Construí la estructura narrativa del guion, desde un gancho que capta la atención hasta un cierre contundente, integrando el texto en pantalla y la voz en off para reforzar el mensaje.</p>
+        <p>Desarrollo guiones para reels que captan la atención desde el inicio, transmiten una idea central y conducen a una acción concreta.</p>
+        <p>Trabajo la estructura narrativa, el gancho, la voz en off, los textos en pantalla y el llamado a la acción para que cada pieza comunique con claridad y mantenga el interés de la audiencia.</p>
+        <h3>Mi aporte</h3>
+        <ul>
+          <li>Conceptualización y estructura del guion.</li>
+          <li>Redacción de ganchos y mensajes clave.</li>
+          <li>Integración de voz en off y textos en pantalla.</li>
+          <li>Cierre orientado al objetivo de comunicación.</li>
+        </ul>
+      </div>
+      <div class="reel-row">
+        <a class="reel" href="https://www.instagram.com/reel/DdKT60VJizr/" target="_blank" rel="noopener">
+          <span class="n">Reel 01</span>
+          <span class="q">Guion para reel de Instagram</span>
+          <span class="go"><span class="play" aria-hidden="true"></span>Ver reel</span>
+        </a>
+        <a class="reel" href="https://www.instagram.com/reel/Dc_2U4Yj0H8/" target="_blank" rel="noopener">
+          <span class="n">Reel 02</span>
+          <span class="q">Guion para reel de Instagram</span>
+          <span class="go"><span class="play" aria-hidden="true"></span>Ver reel</span>
+        </a>
+        <a class="reel" href="https://www.instagram.com/reel/DZ8MzQvSvAl/" target="_blank" rel="noopener">
+          <span class="n">Reel 03</span>
+          <span class="q">Guion para reel de Instagram</span>
+          <span class="go"><span class="play" aria-hidden="true"></span>Ver reel</span>
+        </a>
       </div>
     </div>
   </section>
 
   <section id="landing" aria-labelledby="h-landing">
     <div class="sh">
-      <div><div class="label">02 · Página de evento</div><h2 id="h-landing">Landing</h2></div>
-      <p>Desarrollé el copy integral de la landing de inscripción al evento de aniversario de LinkTIC, incluyendo titulares, paneles, agenda, presentación de ponentes y formulario de registro, con una narrativa orientada a captar el interés y motivar la inscripción.</p>
+      <div><div class="label">02 · Landing</div><h2 id="h-landing">Landing page</h2></div>
+      <p class="kicker">Convertir una propuesta de valor en una invitación a participar.</p>
     </div>
     <article class="landing">
       <div class="l-main">
-        <div class="label">Caso · Evento virtual</div>
-        <h3>LinkTIC Future Forum 2026</h3>
-        <p class="tag">Evento gratuito por los 21 años de LinkTIC, el 24 de septiembre de 2026.</p>
+        <div class="label">LinkTIC Future Forum 2026</div>
+        <p>Desarrollé el copy integral de la landing de inscripción del LinkTIC Future Forum 2026, el evento de aniversario de la compañía. El reto consistía en comunicar una agenda de contenidos sobre tecnología, innovación y transformación empresarial de manera clara y atractiva, motivando a los visitantes a registrarse.</p>
+        <p>Trabajé la narrativa de la página desde el mensaje principal hasta el formulario, conectando la propuesta del evento con los temas de interés de su audiencia.</p>
         <div class="result">
+          <span class="label">Resultado destacado</span>
           <span class="big">+1.000</span>
-          <span>registros orgánicos</span>
+          <span>registros orgánicos asociados al evento.</span>
         </div>
-        <a class="cta" href="https://linktic.com/linktic-future-forum-2026/" target="_blank" rel="noopener">Ver la landing ↗</a>
       </div>
       <div class="did">
-        <div class="label">Lo que escribí</div>
+        <div class="label">Mi aporte</div>
         <ul>
-          <li><b>Titular y mensaje central</b><span>«21 años conectando talento, conocimiento y tecnología e innovación para impulsar la transformación digital empresarial.»</span></li>
-          <li><b>Nombres de los paneles</b><span>IA en acción · Organizaciones inteligentes · El trabajo del mañana · Decisiones potenciadas por la tecnología</span></li>
-          <li><b>Agenda y ponentes</b><span>Recorrido del evento y presentación de cada invitado</span></li>
-          <li><b>Formulario y llamados a la acción</b><span>«Reserva tu lugar» · «Confirmar mi inscripción»</span></li>
+          <li>Definición del mensaje central y los titulares.</li>
+          <li>Redacción de los nombres y descripciones de los paneles.</li>
+          <li>Presentación de la agenda y los ponentes.</li>
+          <li>Desarrollo de los llamados a la acción y textos del formulario.</li>
         </ul>
+        <div class="explore">
+          <span>Explora el proyecto</span>
+          <a class="cta" href="https://linktic.com/linktic-future-forum-2026/" target="_blank" rel="noopener">Ver landing page ↗</a>
+        </div>
       </div>
     </article>
   </section>
 
   <section id="articulos" aria-labelledby="h-articulos">
     <div class="sh">
-      <div><div class="label">03 · Blog y SEO</div><h2 id="h-articulos">Artículos</h2></div>
-      <p>Redacté y optimicé artículos y landing pages para LinkTIC, con enfoque en marketing y tecnología. Cada contenido fue desarrollado para mejorar el posicionamiento orgánico en buscadores, responder a las necesidades de búsqueda de la audiencia y aportar valor mediante información útil y relevante.</p>
+      <div><div class="label">03 · Artículos</div><h2 id="h-articulos">Artículos SEO</h2></div>
+      <p class="kicker">Contenido útil para las personas. Contenido relevante para los buscadores.</p>
     </div>
-    <ol class="arts">
-      <li class="art"><a href="https://linktic.com/blog/aprende-en-20-minutos-como-crear-una-estrategia-de-contenidos-para-redes-sociales/" target="_blank" rel="noopener">
-        <time datetime="2023-12-20">20 dic 2023</time>
-        <div>
-          <h3>Aprende en 20 minutos cómo crear una estrategia de contenidos para redes sociales</h3>
-          <p>Del objetivo a la medición: cómo planear, producir, organizar y distribuir contenido, con los formatos que mejor funcionan.</p>
-          <div class="chips"><span class="chip">Estrategia</span><span class="chip">Video · Podcast · Carruseles</span><span class="chip">Guía paso a paso</span></div>
+    <div class="seo">
+      <div class="seo-text">
+        <p>Redacto y optimizo contenidos sobre marketing, tecnología y transformación digital, combinando investigación, intención de búsqueda y estructura editorial.</p>
+        <p>Mi enfoque va más allá de incorporar palabras clave: busco responder preguntas reales, organizar la información para facilitar su lectura y convertir cada artículo en una oportunidad para atraer audiencias relevantes y fortalecer la presencia orgánica de la marca.</p>
+      </div>
+      <div class="seo-list">
+        <div class="label">Proyectos destacados</div>
+        <ul>
+          <li><b>Estrategia de contenidos para redes sociales</b><span>Planificación, producción, distribución y medición.</span></li>
+          <li><b>Ciberseguridad en Colombia</b><span>Datos, contexto y recomendaciones para una navegación segura.</span></li>
+          <li><b>Marketing de influencers</b><span>Conceptos, tipos de creadores y aplicaciones en campañas de marca.</span></li>
+        </ul>
+        <div class="explore">
+          <span>Explora los artículos</span>
+          <div class="links">
+            <a class="cta" href="https://linktic.com/blog/aprende-en-20-minutos-como-crear-una-estrategia-de-contenidos-para-redes-sociales/" target="_blank" rel="noopener">Estrategia de contenidos ↗</a>
+            <a class="cta" href="https://linktic.com/blog/panorama-completo-de-la-ciberseguridad-en-colombia/" target="_blank" rel="noopener">Ciberseguridad ↗</a>
+            <a class="cta" href="https://linktic.com/blog/marketing-de-influencers-que-es-como-funciona-y-ejemplos-de-este-tipo-de-estrategia/" target="_blank" rel="noopener">Marketing de influencers ↗</a>
+          </div>
         </div>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a></li>
-      <li class="art"><a href="https://linktic.com/blog/panorama-completo-de-la-ciberseguridad-en-colombia/" target="_blank" rel="noopener">
-        <time datetime="2024-02-13">13 feb 2024</time>
-        <div>
-          <h3>Ciberseguridad en Colombia: panorama completo de su estado en 2023</h3>
-          <p>Cifras de ciberdelitos en el país, sanciones legales, conceptos de seguridad digital y 10 consejos para navegar seguro.</p>
-          <div class="chips"><span class="chip">Tecnología</span><span class="chip">Datos y cifras</span><span class="chip">Consejos prácticos</span></div>
-        </div>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a></li>
-      <li class="art"><a href="https://linktic.com/blog/marketing-de-influencers-que-es-como-funciona-y-ejemplos-de-este-tipo-de-estrategia/" target="_blank" rel="noopener">
-        <time datetime="2024-09-30">30 sep 2024</time>
-        <div>
-          <h3>Marketing de influencers: qué es y cómo funciona</h3>
-          <p>Qué es, cómo se arma una campaña, tipos de influenciadores según su alcance y ejemplos de Colombia y de marcas reconocidas.</p>
-          <div class="chips"><span class="chip">Marketing</span><span class="chip">Casos y ejemplos</span><span class="chip">Explicativo</span></div>
-        </div>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a></li>
-    </ol>
+      </div>
+    </div>
   </section>
 
   <section id="automatizacion" aria-labelledby="h-auto">
     <div class="sh">
       <div><div class="label">04 · IA aplicada</div><h2 id="h-auto">Automatización de contenidos</h2></div>
-      <p>Diseño herramientas impulsadas por IA que permiten al equipo crear campañas completas en minutos, manteniendo el criterio editorial, la coherencia estratégica y la voz de la marca.</p>
+      <p class="kicker">Menos tareas repetitivas. Más tiempo para la estrategia.</p>
     </div>
     <article class="auto">
-      <div>
-        <div class="label">Email marketing · Webinars</div>
-        <h3>Copy Webinars</h3>
-        <p>Del brief de un webinar gratuito a un flujo de 10 correos listo para enviar. Evalúa los nombres propuestos, recomienda el mejor y escribe cada correo con asunto, preheader y CTA.</p>
-        <a class="cta" href="https://claude.ai/artifact/GPmKzHn1K153qy8imLcKyN" target="_blank" rel="noopener">Probar la herramienta ↗</a>
+      <div class="auto-main">
+        <p>Diseño herramientas con inteligencia artificial para transformar briefs en entregables de marketing estructurados, reducir tareas manuales y agilizar los procesos de producción de contenido.</p>
+        <p>Un ejemplo es <strong>Copy Webinars</strong>, una herramienta que convierte la información de un webinar en una secuencia de 10 correos, desde el registro hasta la comunicación posterior al evento, con criterios editoriales y objetivos definidos para cada etapa.</p>
+        <div class="result">
+          <span class="label">Resultado destacado</span>
+          <span class="big">1 día → 2 horas</span>
+          <span>El tiempo de preparación del flujo pasó de un día a dos horas, según la medición reportada del proceso.</span>
+        </div>
+        <p class="aside">La automatización acelera la ejecución; el criterio editorial sigue siendo esencial para validar los mensajes, la precisión y la voz de marca.</p>
       </div>
       <div class="flow">
-        <div class="label">El flujo que genera</div>
+        <div class="label">¿Cómo funciona?</div>
+        <ul class="how">
+          <li>Analiza y compara posibles nombres para el webinar.</li>
+          <li>Propone una secuencia de 10 correos organizada en cinco etapas.</li>
+          <li>Genera asuntos, preencabezados y llamados a la acción.</li>
+          <li>Facilita la revisión de la extensión y la coherencia de los mensajes.</li>
+        </ul>
         <div class="steps" aria-label="10 correos en 5 etapas">
           <span class="s0">1</span><span class="s1">2</span><span class="s1">3</span><span class="s1">4</span><span class="s1">5</span><span class="s1">6</span><span class="s2">7</span><span class="s3">8</span><span class="s3">9</span><span class="s4">10</span>
         </div>
         <div class="stages" aria-hidden="true"><span>Registro</span><span>Valor</span><span>Urgencia</span><span>Asistencia</span><span>Post</span></div>
-        <ul class="feat">
-          <li><b>Análisis de nombres</b><span>Puntaje, fortalezas y riesgos de cada opción del brief</span></li>
-          <li><b>De un día a dos horas</b><span>Lo que tarda ahora el equipo en tener listo un flujo de 10 correos</span></li>
-          <li><b>10 correos en 5 etapas</b><span>Expectativa, valor, urgencia, asistencia y post-evento</span></li>
-          <li><b>Asunto y preheader</b><span>Con conteo de caracteres para no pasarse de 50</span></li>
-        </ul>
+        <div class="explore">
+          <span>Prueba la herramienta</span>
+          <a class="cta" href="https://claude.ai/artifact/GPmKzHn1K153qy8imLcKyN" target="_blank" rel="noopener">Copy Webinars ↗</a>
+        </div>
       </div>
     </article>
   </section>
